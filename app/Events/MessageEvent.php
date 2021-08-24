@@ -37,6 +37,6 @@ class MessageEvent implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new PrivateChannel("room.{$this->response['to']}");   
+        return new PrivateChannel("MessageEvent.{$this->response['to']}");   
     }
 }

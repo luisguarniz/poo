@@ -18,6 +18,6 @@ Broadcast::channel('App.Models.User.{id}', function ($user, $id) {
 });
 
 // TODO: validar existencia sala
-Broadcast::channel('room.{id}', function ($room) {
+Broadcast::channel('MessageEvent.{id}', function ($room) {
     return $room;
 });
