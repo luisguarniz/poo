@@ -40,7 +40,7 @@ Route::get("Room/getStatusbtnStopVoting/{roomCode}",[RoomController::class, 'get
 Route::get("Room/makeRoomSolo/{idParticipantes}",[RoomController::class, 'makeRoomSolo'])->name('Room.makeRoomSolo');
 
 //Rutas del Host
-Route::get("User/makeUser",[UserController::class, 'makeUser'])->name('User.makeUser');
+Route::get("User/makeUser/{participanteNom}",[UserController::class, 'makeUser'])->name('User.makeUser');
 Route::get("User/isAdmin/{id}",[UserController::class, 'isAdmin'])->name('User.isAdmin');
 Route::get("User/getUserTurn/{id}",[UserController::class, 'getUserTurn'])->name('User.getUserTurn');
 Route::post("User/loginHost",[UserController::class, 'loginHost'])->name('api.auth.login');
@@ -51,7 +51,7 @@ Route::get('User/me',[UserController::class, 'me'])
 Route::put("User/editNameUser",[UserController::class, 'editNameUser'])->name('user.editNameUser');
 
 //Rutas del Invited
-Route::get("User/makeInvited",[UserController::class, 'makeInvited'])->name('User.makeInvited');
+Route::get("User/makeInvited/{participanteNom}",[UserController::class, 'makeInvited'])->name('User.makeInvited');
 
 
 //rutas para mensajes websocket
