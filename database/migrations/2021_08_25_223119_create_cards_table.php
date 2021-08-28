@@ -16,7 +16,7 @@ class CreateCardsTable extends Migration
 
         //SE MIGRARON DE MANERA MANUAL CORRECTAMENTE POR QUE DA UN ERROR AL migrarlos con el comando migrate PARECER POR EL ORDEN EN QUE FUERON CREADAS
         Schema::create('cards', function (Blueprint $table) {
-            $table->uuid("idCard")->primary();
+            $table->id();
             $table->string("cardName");
             $table->integer("valor");
             $table->timestamps();

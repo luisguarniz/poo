@@ -15,14 +15,14 @@ class CreateMesasTable extends Migration
     {
         //SE MIGRARON DE MANERA MANUAL CORRECTAMENTE POR QUE DA UN ERROR AL migrarlos con el comando migrate PARECER POR EL ORDEN EN QUE FUERON CREADAS
         Schema::create('mesas', function (Blueprint $table) {
-            $table->uuid("idMesa")->primary();
-            $table->unsignedBigInteger("idUser")->nullable();//FK
+            $table->id();
+            $table->unsignedBigInteger("idSessionGame");
+            $table->boolean("isActive")->default("1");
             $table->timestamps();
 
 
 
-            $table->foreign('idUser')->references('id')->on('users')
-            ->onDelete('set null');
+            $table->foreign('idSessionGame')->references('id')->on('session_games');
         });
     }
 

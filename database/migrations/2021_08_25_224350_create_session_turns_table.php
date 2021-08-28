@@ -15,22 +15,17 @@ class CreateSessionTurnsTable extends Migration
     {
         //SE MIGRARON DE MANERA MANUAL CORRECTAMENTE POR QUE DA UN ERROR AL migrarlos con el comando migrate PARECER POR EL ORDEN EN QUE FUERON CREADAS
         Schema::create('session_turns', function (Blueprint $table) {
-            $table->uuid("idSessionTurn")->primary();
-            $table->unsignedBigInteger("idUser")->nullable();//FK
-            $table->uuid('idSessionGame')->nullable();//FK
+            $table->id();
+            $table->unsignedBigInteger("idUser");
+            $table->unsignedBigInteger("idSessionGame");
             $table->boolean('turn')->default('0');
             $table->integer('orderTurn')->default('1');
             $table->timestamps();
 
 
-            $table->foreign('idUser')->references('id')->on('users')
-            ->onDelete('set null');
-
-            $table->foreign('idSessionGame')
-            ->references('idSessionGame')->on('session_games')
-            ->onDelete('set null');     
-        
-
+            $table->foreign('idUser')->references('id')->on('users');
+            $table->foreign('idSessionGame')->references('id')->on('session_games');
+           
         });
     }
 

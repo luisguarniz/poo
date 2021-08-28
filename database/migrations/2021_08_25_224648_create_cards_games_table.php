@@ -15,18 +15,14 @@ class CreateCardsGamesTable extends Migration
     {
         //SE MIGRARON DE MANERA MANUAL CORRECTAMENTE POR QUE DA UN ERROR AL migrarlos con el comando migrate PARECER POR EL ORDEN EN QUE FUERON CREADAS
         Schema::create('cards_games', function (Blueprint $table) {
-            $table->uuid("idCardGame")->primary();
-            $table->uuid("idMesa")->nullable();
-            $table->unsignedBigInteger("idUser")->nullable();//FK
-            $table->string("idCardInGame")->nullable();//este campo sera llenado despues que se llene la tabla games
+            $table->id();
+            $table->unsignedBigInteger('idMesa');
+            $table->unsignedBigInteger('idCard');
+            $table->integer("cardStock")->default("0");
             $table->timestamps();
 
-            $table->foreign('idMesa')
-            ->references('idMesa')->on('mesas')
-            ->onDelete('set null');
-
-            $table->foreign('idUser')->references('id')->on('users')
-            ->onDelete('set null');
+            $table->foreign('idMesa')->references('id')->on('mesas');
+            $table->foreign('idCard')->references('id')->on('cards');
         });
     }
 

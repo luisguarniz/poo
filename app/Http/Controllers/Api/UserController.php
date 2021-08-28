@@ -82,7 +82,7 @@ class UserController extends Controller
     $permitted_chars1 = '0123456789abcdefghijklmnopqrstuvwxyz';
     $nrorandom =  substr(str_shuffle($permitted_chars1), 0, 4); //guardamos los caracteres aleatorios
 
-    //$character = Character::all()->random(); // con este metodo traigo un registro random
+    //$character = Character::all()->random(`); // con este metodo traigo un registro random
     //$nomCharacter = $character->characterName;
     $nomCharacter = $request->participanteNom;
 
