@@ -13,8 +13,6 @@ class CreateCardsTable extends Migration
      */
     public function up()
     {
-
-        //SE MIGRARON DE MANERA MANUAL CORRECTAMENTE POR QUE DA UN ERROR AL migrarlos con el comando migrate PARECER POR EL ORDEN EN QUE FUERON CREADAS
         Schema::create('cards', function (Blueprint $table) {
             $table->id();
             $table->string("cardName");

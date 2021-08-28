@@ -13,7 +13,6 @@ class CreateStatusGamesTable extends Migration
      */
     public function up()
     {
-        //SE MIGRARON DE MANERA MANUAL CORRECTAMENTE POR QUE DA UN ERROR AL migrarlos con el comando migrate PARECER POR EL ORDEN EN QUE FUERON CREADAS
         Schema::create('status_games', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger("idMesa");
@@ -22,7 +21,7 @@ class CreateStatusGamesTable extends Migration
             $table->timestamps();
 
             $table->foreign('idMesa')->references('id')->on('mesas');
-            $table->foreign('idUser')->references('id')->on('users');// refenciado del campo 'id' de la tabla 'users'
+            $table->foreign('idUser')->references('id')->on('users');
         });
     }
 

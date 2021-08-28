@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMesasTable extends Migration
+class CreateSessionTurnsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,16 @@ class CreateMesasTable extends Migration
      */
     public function up()
     {
-        //SE MIGRARON DE MANERA MANUAL CORRECTAMENTE POR QUE DA UN ERROR AL migrarlos con el comando migrate PARECER POR EL ORDEN EN QUE FUERON CREADAS
-        Schema::create('mesas', function (Blueprint $table) {
+        Schema::create('session_turns', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger("idUser");
             $table->unsignedBigInteger("idSessionGame");
-            $table->boolean("isActive")->default("1");
+            $table->boolean('turn')->default('0');
+            $table->integer('orderTurn')->default('1');
             $table->timestamps();
 
 
-
+            $table->foreign('idUser')->references('id')->on('users');
             $table->foreign('idSessionGame')->references('id')->on('session_games');
         });
     }
@@ -33,6 +34,6 @@ class CreateMesasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mesas');
+        Schema::dropIfExists('session_turns');
     }
 }
