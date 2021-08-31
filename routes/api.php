@@ -1,7 +1,11 @@
 <?php
 
+use App\Http\Controllers\Api\Card_GameController;
+use App\Http\Controllers\Api\MesasController;
 use App\Http\Controllers\Api\MessageController;
 use App\Http\Controllers\Api\RoomController;
+use App\Http\Controllers\Api\Session_GameController;
+use App\Http\Controllers\Api\Session_TurnController;
 use App\Http\Controllers\Api\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -53,6 +57,19 @@ Route::put("User/editNameUser",[UserController::class, 'editNameUser'])->name('u
 //Rutas del Invited
 Route::get("User/makeInvited/{participanteNom}",[UserController::class, 'makeInvited'])->name('User.makeInvited');
 
+//Rutas Card_game
+Route::post("Cards_game/makeCardsGame",[Card_GameController::class, 'makeCardsGame'])->name('Cards_game.makeCardsGame');
+
+//Rutas Mesas
+Route::get("Mesa/makeMesa/{idSessionGame}",[MesasController::class, 'makeMesa'])->name('Mesa.makeMesa');
+
+//Rutas Session_Game
+Route::get("Session_game/makeSessionGame/{roomID}",[Session_GameController::class, 'makeSessionGame'])->name('Session_game.makeSessionGame');
+
+//Rutas Session_Trun
+Route::post("Session_turn/makeSessionTurn",[Session_TurnController::class, 'makeSessionTurn'])->name('Session_turn.makeSessionTurn');
+Route::put("Session_turn/changeTurn",[Session_TurnController::class, 'changeTurn'])->name('Session_turn.changeTurn');
+Route::get("Session_turn/getTurn/{idSessionGame}",[Session_TurnController::class, 'getTurn'])->name('Session_turn.getTurn');
 
 //rutas para mensajes websocket
 //ruta para desblokear las cartas de los participantes
