@@ -23,8 +23,8 @@ class MessageEvent implements ShouldBroadcast
     public function __construct($message)
     {
         $this->response = [
-            'msgUnblock'   => $message['msgUnblock'],
-            'codigoSesion' => $message['codigoSesion'],
+            'idMesa' => $message['idMesa'],
+            'repartirTrue'   => $message['repartirTrue'],
             'to'           => $message['to'],
             'from'         => auth()->user(),
         ];

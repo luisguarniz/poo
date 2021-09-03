@@ -187,11 +187,23 @@ class Card_GameController extends Controller
       $nuevoStock = [];
     }
 
+    $cards = Cards_user::where('idMesa', $request->idMesa)
+    ->where('idUser', $request->Participantes[0])
+    ->first();
     return response()->json([
-      'message' => "se registraron las cartas del user",
-      'cantidadxCarta' => $cantidadxCarta,
-      '$stockxCarta' => $stockxCarta,
-      'nroDeUsuarios' => $nroDeUsuarios
+      'message' => "se registraron las cartas de todos los participantes",
+      '$cards' => $cards
+    ]);
+
+  }
+  public function getCardsUser(Request $request)
+  { 
+    $cards = Cards_user::where('idMesa', $request->idMesa)
+    ->where('idUser', $request->idUser)
+    ->first();
+    return response()->json([
+      'message' => "cartas en mano del Participante",
+      '$cards' => $cards
     ]);
   }
 }
