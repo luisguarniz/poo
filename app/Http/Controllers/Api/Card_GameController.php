@@ -201,6 +201,7 @@ class Card_GameController extends Controller
     $cards = Cards_user::where('idMesa', $request->idMesa)
     ->where('idUser', $request->idUser)
     ->first();
+    
     return response()->json([
       'message' => "cartas en mano del Participante",
       '$cards' => $cards
