@@ -74,7 +74,7 @@ Route::put("Session_turn/changeTurn",[Session_TurnController::class, 'changeTurn
 Route::get("Session_turn/getTurn/{idSessionGame}",[Session_TurnController::class, 'getTurn'])->name('Session_turn.getTurn');
 
 //rutas para mensajes websocket
-//ruta para desblokear las cartas de los participantes
+
 Route::post('Message/messageWebsocket',[MessageController::class, 'messageWebsocket'])
 ->name('MessageController.messageWebsocket')
 ->middleware('auth:api');
