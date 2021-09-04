@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Cards_game;
+use App\Models\Cards_mesa;
 use App\Models\Cards_user;
 use Illuminate\Http\Request;
+use stdClass;
 
 class Card_GameController extends Controller
 {
@@ -173,7 +175,7 @@ class Card_GameController extends Controller
       $cardsUser['card_Otorongo_In_Game'] = $cantidadxCarta[6];
       $cardsUser->save();
 
-      
+
       for ($j = 0; $j < count($stockxCarta); $j++) {
         Cards_game::where('idMesa', $request->idMesa)
           ->where('idCard', $j + 1)
@@ -186,25 +188,262 @@ class Card_GameController extends Controller
       $stockxCarta = [];
       $nuevoStock = [];
     }
+    $cardsName = new stdClass();
+    $cardsNames = [];
+    $cards = Cards_user::select('card_1_In_Game', 'card_2_In_Game', 'card_3_In_Game', 'card_4_In_Game', 'card_5_In_Game', 'card_6_In_Game', 'card_Otorongo_In_Game')
+      ->where('idMesa', $request->idMesa)
+      ->where('idUser', $request->Participantes[0])
+      ->first();
 
-    $cards = Cards_user::where('idMesa', $request->idMesa)
-    ->where('idUser', $request->Participantes[0])
-    ->first();
-    return response()->json([
-      'message' => "se registraron las cartas de todos los participantes",
-      '$cards' => $cards
-    ]);
+    if ($cards->card_1_In_Game > 0) {
+      for ($i = 0; $i < $cards->card_1_In_Game; $i++) {
+        $cardsName->nameCard = "card1";
 
-  }
-  public function getCardsUser(Request $request)
-  { 
-    $cards = Cards_user::where('idMesa', $request->idMesa)
-    ->where('idUser', $request->idUser)
-    ->first();
+        $cardsNamese = array(
+          "nameCard" => $cardsName->nameCard,
+          "valor" => 1
+        );
+        array_push($cardsNames, $cardsNamese);
+      }
+    }
+    if ($cards->card_2_In_Game > 0) {
+      for ($i = 0; $i < $cards->card_2_In_Game; $i++) {
+
+        $cardsName->nameCard = "card2";
+
+        $cardsNamese = array(
+          "nameCard" => $cardsName->nameCard,
+          "valor" => 2
+        );
+        array_push($cardsNames, $cardsNamese);
+      }
+    }
+    if ($cards->card_3_In_Game > 0) {
+      for ($i = 0; $i < $cards->card_3_In_Game; $i++) {
+        $cardsName->nameCard = "card3";
+
+        $cardsNamese = array(
+          "nameCard" => $cardsName->nameCard,
+          "valor" => 3
+        );
+        array_push($cardsNames, $cardsNamese);
+      }
+    }
+    if ($cards->card_4_In_Game > 0) {
+      for ($i = 0; $i < $cards->card_4_In_Game; $i++) {
+        $cardsName->nameCard = "card4";
+
+        $cardsNamese = array(
+          "nameCard" => $cardsName->nameCard,
+          "valor" => 4
+        );
+        array_push($cardsNames, $cardsNamese);
+      }
+    }
+    if ($cards->card_5_In_Game > 0) {
+      for ($i = 0; $i < $cards->card_5_In_Game; $i++) {
+        $cardsName->nameCard = "card5";
+
+        $cardsNamese = array(
+          "nameCard" => $cardsName->nameCard,
+          "valor" => 5
+        );
+        array_push($cardsNames, $cardsNamese);
+      }
+    }
+    if ($cards->card_6_In_Game > 0) {
+      for ($i = 0; $i < $cards->card_6_In_Game; $i++) {
+        $cardsName->nameCard = "card6";
+
+        $cardsNamese = array(
+          "nameCard" => $cardsName->nameCard,
+          "valor" => 6
+        );
+        array_push($cardsNames, $cardsNamese);
+      }
+    }
+    if ($cards->card_Otorongo_In_Game > 0) {
+      for ($i = 0; $i < $cards->card_Otorongo_In_Game; $i++) {
+        $cardsName->nameCard = "cardOtorongo";
+
+        $cardsNamese = array(
+          "nameCard" => $cardsName->nameCard,
+          "valor" => 10
+        );
+        array_push($cardsNames, $cardsNamese);
+      }
+    }
+    $cardsMesa = Cards_game::select('idCard', 'cardStock')
+      ->where('idMesa', $request->idMesa)
+      ->get();
+    for ($i = 0; $i < count($cardsMesa); $i++) {
+      if ($cardsMesa[$i]->cardStock == 0) {
+        unset($cardsMesa[$i]);
+      }
+    }
+
+    //nos aseguramos que estamos enviando una carta con stock mayor a 0
+    $cardMesa = $cardsMesa->random();
     
+    
+    if ($cardMesa->cardStock > 0) {
+      $stockNew = $cardMesa->cardStock - 1;
+
+      switch ($cardMesa->idCard) {
+        case 1:
+          $cardMesaNew = new Cards_mesa();
+          $cardMesaNew['idMesa'] = $request->idMesa;
+          $cardMesaNew['card_1_In_Mesa'] = 1;
+          $cardMesaNew->save();
+          break;
+        case 2:
+          $cardMesaNew = new Cards_mesa();
+          $cardMesaNew['idMesa'] = $request->idMesa;
+          $cardMesaNew['card_2_In_Mesa'] = 1;
+          $cardMesaNew->save();
+          break;
+        case 3:
+          $cardMesaNew = new Cards_mesa();
+          $cardMesaNew['idMesa'] = $request->idMesa;
+          $cardMesaNew['card_3_In_Mesa'] = 1;
+          $cardMesaNew->save();
+          break;
+        case 4:
+          $cardMesaNew = new Cards_mesa();
+          $cardMesaNew['idMesa'] = $request->idMesa;
+          $cardMesaNew['card_4_In_Mesa'] = 1;
+          $cardMesaNew->save();
+          break;
+        case 5:
+          $cardMesaNew = new Cards_mesa();
+          $cardMesaNew['idMesa'] = $request->idMesa;
+          $cardMesaNew['card_5_In_Mesa'] = 1;
+          $cardMesaNew->save();
+          break;
+        case 6:
+          $cardMesaNew = new Cards_mesa();
+          $cardMesaNew['idMesa'] = $request->idMesa;
+          $cardMesaNew['card_6_In_Mesa'] = 1;
+          $cardMesaNew->save();
+          break;
+        case 7:
+          $cardMesaNew = new Cards_mesa();
+          $cardMesaNew['idMesa'] = $request->idMesa;
+          $cardMesaNew['card_Otorongo_In_Mesa'] = 1;
+          $cardMesaNew->save();
+          break;
+      }
+
+
+      Cards_game::where('idMesa', $request->idMesa)
+        ->where('idCard', $cardMesa->idCard)
+        ->update(['cardStock' => $stockNew]);
+
+      return response()->json([
+        'message' => "se registraron las cartas de todos los participantes",
+        'cards' => $cardsNames,
+        'cardMesa' => $cardMesa
+      ]);
+    } else {
+      return response()->json([
+        'message' => "ocurrio un problema al asignar una carta a la mesa"
+      ]);
+    }
+  }
+
+  public function getCardsUser(Request $request)
+  {
+
+    $cardsName = new stdClass();
+    $cardsNames = [];
+
+    $cards = Cards_user::where('idMesa', $request->idMesa)
+      ->where('idUser', $request->idUser)
+      ->first();
+
+    if ($cards->card_1_In_Game > 0) {
+      for ($i = 0; $i < $cards->card_1_In_Game; $i++) {
+        $cardsName->nameCard = "card1";
+
+        $cardsNamese = array(
+          "nameCard" => $cardsName->nameCard,
+          "valor" => 1
+        );
+        array_push($cardsNames, $cardsNamese);
+      }
+    }
+    if ($cards->card_2_In_Game > 0) {
+      for ($i = 0; $i < $cards->card_2_In_Game; $i++) {
+
+        $cardsName->nameCard = "card2";
+
+        $cardsNamese = array(
+          "nameCard" => $cardsName->nameCard,
+          "valor" => 2
+        );
+        array_push($cardsNames, $cardsNamese);
+      }
+    }
+    if ($cards->card_3_In_Game > 0) {
+      for ($i = 0; $i < $cards->card_3_In_Game; $i++) {
+        $cardsName->nameCard = "card3";
+
+        $cardsNamese = array(
+          "nameCard" => $cardsName->nameCard,
+          "valor" => 3
+        );
+        array_push($cardsNames, $cardsNamese);
+      }
+    }
+    if ($cards->card_4_In_Game > 0) {
+      for ($i = 0; $i < $cards->card_4_In_Game; $i++) {
+        $cardsName->nameCard = "card4";
+
+        $cardsNamese = array(
+          "nameCard" => $cardsName->nameCard,
+          "valor" => 4
+        );
+        array_push($cardsNames, $cardsNamese);
+      }
+    }
+    if ($cards->card_5_In_Game > 0) {
+      for ($i = 0; $i < $cards->card_5_In_Game; $i++) {
+        $cardsName->nameCard = "card5";
+
+        $cardsNamese = array(
+          "nameCard" => $cardsName->nameCard,
+          "valor" => 5
+        );
+        array_push($cardsNames, $cardsNamese);
+      }
+    }
+    if ($cards->card_6_In_Game > 0) {
+      for ($i = 0; $i < $cards->card_6_In_Game; $i++) {
+        $cardsName->nameCard = "card6";
+
+        $cardsNamese = array(
+          "nameCard" => $cardsName->nameCard,
+          "valor" => 6
+        );
+        array_push($cardsNames, $cardsNamese);
+      }
+    }
+    if ($cards->card_Otorongo_In_Game > 0) {
+      for ($i = 0; $i < $cards->card_Otorongo_In_Game; $i++) {
+        $cardsName->nameCard = "cardOtorongo";
+
+        $cardsNamese = array(
+          "nameCard" => $cardsName->nameCard,
+          "valor" => 10
+        );
+        array_push($cardsNames, $cardsNamese);
+      }
+    }
+
+
     return response()->json([
       'message' => "cartas en mano del Participante",
-      '$cards' => $cards
+      'cards' => $cardsNames
     ]);
   }
 }
