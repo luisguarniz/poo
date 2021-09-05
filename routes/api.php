@@ -61,6 +61,7 @@ Route::get("User/makeInvited/{participanteNom}",[UserController::class, 'makeInv
 Route::post("Cards_game/makeCardsGame",[Card_GameController::class, 'makeCardsGame'])->name('Cards_game.makeCardsGame');
 Route::post("Cards_game/makeCardsUser",[Card_GameController::class, 'makeCardsUser'])->name('Cards_game.makeCardsUser');
 Route::post("Cards_game/getCardsUser",[Card_GameController::class, 'getCardsUser'])->name('Cards_game.getCardsUser');
+Route::get("Cards_game/getcardMesa/{idMesa}",[Card_GameController::class, 'getcardMesa'])->name('Cards_game.getcardMesa');
 
 //Rutas Mesas
 Route::get("Mesa/makeMesa/{idSessionGame}",[MesasController::class, 'makeMesa'])->name('Mesa.makeMesa');

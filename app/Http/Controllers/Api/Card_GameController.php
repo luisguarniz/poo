@@ -289,48 +289,73 @@ class Card_GameController extends Controller
     if ($cardMesa->cardStock > 0) {
       $stockNew = $cardMesa->cardStock - 1;
 
+      $cardMesaName = new stdClass();
       switch ($cardMesa->idCard) {
         case 1:
           $cardMesaNew = new Cards_mesa();
           $cardMesaNew['idMesa'] = $request->idMesa;
           $cardMesaNew['card_1_In_Mesa'] = 1;
           $cardMesaNew->save();
+                 
+          $cardMesaName->nameCard = "card1";
+          $cardMesaName->valor = 1;
           break;
         case 2:
           $cardMesaNew = new Cards_mesa();
           $cardMesaNew['idMesa'] = $request->idMesa;
           $cardMesaNew['card_2_In_Mesa'] = 1;
           $cardMesaNew->save();
+          
+          $cardMesaName->nameCard = "card2";
+          $cardMesaName->valor = 2;
           break;
         case 3:
           $cardMesaNew = new Cards_mesa();
           $cardMesaNew['idMesa'] = $request->idMesa;
           $cardMesaNew['card_3_In_Mesa'] = 1;
           $cardMesaNew->save();
+         
+          $cardMesaName->nameCard = "card3";
+          $cardMesaName->valor = 3;
           break;
         case 4:
           $cardMesaNew = new Cards_mesa();
           $cardMesaNew['idMesa'] = $request->idMesa;
           $cardMesaNew['card_4_In_Mesa'] = 1;
           $cardMesaNew->save();
+
+          $cardMesaName->nameCard = "card4";
+          $cardMesaName->valor = 4;
           break;
         case 5:
           $cardMesaNew = new Cards_mesa();
           $cardMesaNew['idMesa'] = $request->idMesa;
           $cardMesaNew['card_5_In_Mesa'] = 1;
           $cardMesaNew->save();
+          
+
+          $cardMesaName->nameCard = "card5";
+          $cardMesaName->valor = 5;
           break;
         case 6:
           $cardMesaNew = new Cards_mesa();
           $cardMesaNew['idMesa'] = $request->idMesa;
           $cardMesaNew['card_6_In_Mesa'] = 1;
           $cardMesaNew->save();
+          
+
+          $cardMesaName->nameCard = "card6";
+          $cardMesaName->valor = 6;
           break;
         case 7:
           $cardMesaNew = new Cards_mesa();
           $cardMesaNew['idMesa'] = $request->idMesa;
           $cardMesaNew['card_Otorongo_In_Mesa'] = 1;
           $cardMesaNew->save();
+          
+
+          $cardMesaName->nameCard = "cardOtorongo";
+          $cardMesaName->valor = 10;
           break;
       }
 
@@ -342,7 +367,7 @@ class Card_GameController extends Controller
       return response()->json([
         'message' => "se registraron las cartas de todos los participantes",
         'cards' => $cardsNames,
-        'cardMesa' => $cardMesa
+        'cardMesaName' => $cardMesaName
       ]);
     } else {
       return response()->json([
@@ -445,5 +470,75 @@ class Card_GameController extends Controller
       'message' => "cartas en mano del Participante",
       'cards' => $cardsNames
     ]);
+  }
+
+  public function getcardMesa(Request $request){
+    $cardMesa = Cards_mesa::where('idMesa', $request->idMesa)->first();
+
+    $cardMesaName = new stdClass();
+      if ($cardMesa->card_1_In_Mesa == 1) {
+
+        $cardMesaName->nameCard = "card1";
+        $cardMesaName->valor = 1;
+
+        return response()->json([
+          'cards' => $cardMesaName
+        ]);
+      }
+      if ($cardMesa->card_2_In_Mesa == 1) {
+        
+        $cardMesaName->nameCard = "card2";
+        $cardMesaName->valor = 2;
+
+        return response()->json([
+          'cards' => $cardMesaName
+        ]);
+      }
+      if ($cardMesa->card_3_In_Mesa == 1) {
+        
+        $cardMesaName->nameCard = "card3";
+        $cardMesaName->valor = 3;
+
+        return response()->json([
+          'cards' => $cardMesaName
+        ]);
+      }
+      if ($cardMesa->card_4_In_Mesa == 1) {
+        
+        $cardMesaName->nameCard = "card4";
+        $cardMesaName->valor = 4;
+
+        return response()->json([
+          'cards' => $cardMesaName
+        ]);
+      }
+      if ($cardMesa->card_5_In_Mesa == 1) {
+        
+        $cardMesaName->nameCard = "card5";
+        $cardMesaName->valor = 5;
+
+        return response()->json([
+          'cards' => $cardMesaName
+        ]);
+      }
+      if ($cardMesa->card_6_In_Mesa == 1) {
+        
+        $cardMesaName->nameCard = "card6";
+        $cardMesaName->valor = 6;
+
+        return response()->json([
+          'cards' => $cardMesaName
+        ]);
+      }
+      if ($cardMesa->card_Otorongo_In_Mesa == 1) {
+        
+        $cardMesaName->nameCard = "cardOtorongo";
+        $cardMesaName->valor = 10;
+
+        return response()->json([
+          'cards' => $cardMesaName
+        ]);
+      }
+
   }
 }
