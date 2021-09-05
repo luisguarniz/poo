@@ -201,7 +201,8 @@ class Card_GameController extends Controller
 
         $cardsNamese = array(
           "nameCard" => $cardsName->nameCard,
-          "valor" => 1
+          "valor" => 1,
+          "esMayorIgual"=> 0
         );
         array_push($cardsNames, $cardsNamese);
       }
@@ -213,7 +214,8 @@ class Card_GameController extends Controller
 
         $cardsNamese = array(
           "nameCard" => $cardsName->nameCard,
-          "valor" => 2
+          "valor" => 2,
+          "esMayorIgual"=> 0
         );
         array_push($cardsNames, $cardsNamese);
       }
@@ -224,7 +226,8 @@ class Card_GameController extends Controller
 
         $cardsNamese = array(
           "nameCard" => $cardsName->nameCard,
-          "valor" => 3
+          "valor" => 3,
+          "esMayorIgual"=> 0
         );
         array_push($cardsNames, $cardsNamese);
       }
@@ -235,7 +238,8 @@ class Card_GameController extends Controller
 
         $cardsNamese = array(
           "nameCard" => $cardsName->nameCard,
-          "valor" => 4
+          "valor" => 4,
+          "esMayorIgual"=> 0
         );
         array_push($cardsNames, $cardsNamese);
       }
@@ -246,7 +250,8 @@ class Card_GameController extends Controller
 
         $cardsNamese = array(
           "nameCard" => $cardsName->nameCard,
-          "valor" => 5
+          "valor" => 5,
+          "esMayorIgual"=> 0
         );
         array_push($cardsNames, $cardsNamese);
       }
@@ -257,7 +262,8 @@ class Card_GameController extends Controller
 
         $cardsNamese = array(
           "nameCard" => $cardsName->nameCard,
-          "valor" => 6
+          "valor" => 6,
+          "esMayorIgual"=> 0
         );
         array_push($cardsNames, $cardsNamese);
       }
@@ -268,7 +274,8 @@ class Card_GameController extends Controller
 
         $cardsNamese = array(
           "nameCard" => $cardsName->nameCard,
-          "valor" => 10
+          "valor" => 10,
+          "esMayorIgual"=> 0
         );
         array_push($cardsNames, $cardsNamese);
       }
@@ -392,7 +399,8 @@ class Card_GameController extends Controller
 
         $cardsNamese = array(
           "nameCard" => $cardsName->nameCard,
-          "valor" => 1
+          "valor" => 1,
+          "esMayorIgual"=> 0
         );
         array_push($cardsNames, $cardsNamese);
       }
@@ -404,7 +412,8 @@ class Card_GameController extends Controller
 
         $cardsNamese = array(
           "nameCard" => $cardsName->nameCard,
-          "valor" => 2
+          "valor" => 2,
+          "esMayorIgual"=> 0
         );
         array_push($cardsNames, $cardsNamese);
       }
@@ -415,7 +424,8 @@ class Card_GameController extends Controller
 
         $cardsNamese = array(
           "nameCard" => $cardsName->nameCard,
-          "valor" => 3
+          "valor" => 3,
+          "esMayorIgual"=> 0
         );
         array_push($cardsNames, $cardsNamese);
       }
@@ -426,7 +436,8 @@ class Card_GameController extends Controller
 
         $cardsNamese = array(
           "nameCard" => $cardsName->nameCard,
-          "valor" => 4
+          "valor" => 4,
+          "esMayorIgual"=> 0
         );
         array_push($cardsNames, $cardsNamese);
       }
@@ -437,7 +448,8 @@ class Card_GameController extends Controller
 
         $cardsNamese = array(
           "nameCard" => $cardsName->nameCard,
-          "valor" => 5
+          "valor" => 5,
+          "esMayorIgual"=> 0
         );
         array_push($cardsNames, $cardsNamese);
       }
@@ -448,7 +460,8 @@ class Card_GameController extends Controller
 
         $cardsNamese = array(
           "nameCard" => $cardsName->nameCard,
-          "valor" => 6
+          "valor" => 6,
+          "esMayorIgual"=> 0
         );
         array_push($cardsNames, $cardsNamese);
       }
@@ -459,7 +472,8 @@ class Card_GameController extends Controller
 
         $cardsNamese = array(
           "nameCard" => $cardsName->nameCard,
-          "valor" => 10
+          "valor" => 10,
+          "esMayorIgual"=> 0
         );
         array_push($cardsNames, $cardsNamese);
       }
