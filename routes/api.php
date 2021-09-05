@@ -65,6 +65,7 @@ Route::get("Cards_game/getcardMesa/{idMesa}",[Card_GameController::class, 'getca
 
 //Rutas Mesas
 Route::get("Mesa/makeMesa/{idSessionGame}",[MesasController::class, 'makeMesa'])->name('Mesa.makeMesa');
+Route::put("Mesa/cardMesaUpdate",[MesasController::class, 'cardMesaUpdate'])->name('Mesa.cardMesaUpdate');
 
 //Rutas Session_Game
 Route::get("Session_game/makeSessionGame/{roomID}",[Session_GameController::class, 'makeSessionGame'])->name('Session_game.makeSessionGame');

@@ -200,6 +200,7 @@ class Card_GameController extends Controller
         $cardsName->nameCard = "card1";
 
         $cardsNamese = array(
+          "idCard" => 1,
           "nameCard" => $cardsName->nameCard,
           "valor" => 1,
           "esMayorIgual"=> 0
@@ -213,6 +214,7 @@ class Card_GameController extends Controller
         $cardsName->nameCard = "card2";
 
         $cardsNamese = array(
+          "idCard" => 2,
           "nameCard" => $cardsName->nameCard,
           "valor" => 2,
           "esMayorIgual"=> 0
@@ -225,6 +227,7 @@ class Card_GameController extends Controller
         $cardsName->nameCard = "card3";
 
         $cardsNamese = array(
+          "idCard" => 3,
           "nameCard" => $cardsName->nameCard,
           "valor" => 3,
           "esMayorIgual"=> 0
@@ -237,6 +240,7 @@ class Card_GameController extends Controller
         $cardsName->nameCard = "card4";
 
         $cardsNamese = array(
+          "idCard" => 4,
           "nameCard" => $cardsName->nameCard,
           "valor" => 4,
           "esMayorIgual"=> 0
@@ -249,6 +253,7 @@ class Card_GameController extends Controller
         $cardsName->nameCard = "card5";
 
         $cardsNamese = array(
+          "idCard" => 5,
           "nameCard" => $cardsName->nameCard,
           "valor" => 5,
           "esMayorIgual"=> 0
@@ -261,6 +266,7 @@ class Card_GameController extends Controller
         $cardsName->nameCard = "card6";
 
         $cardsNamese = array(
+          "idCard" => 6,
           "nameCard" => $cardsName->nameCard,
           "valor" => 6,
           "esMayorIgual"=> 0
@@ -273,6 +279,7 @@ class Card_GameController extends Controller
         $cardsName->nameCard = "cardOtorongo";
 
         $cardsNamese = array(
+          "idCard" => 7,
           "nameCard" => $cardsName->nameCard,
           "valor" => 10,
           "esMayorIgual"=> 0
@@ -398,6 +405,7 @@ class Card_GameController extends Controller
         $cardsName->nameCard = "card1";
 
         $cardsNamese = array(
+          "idCard" => 1,
           "nameCard" => $cardsName->nameCard,
           "valor" => 1,
           "esMayorIgual"=> 0
@@ -411,6 +419,7 @@ class Card_GameController extends Controller
         $cardsName->nameCard = "card2";
 
         $cardsNamese = array(
+          "idCard" => 2,
           "nameCard" => $cardsName->nameCard,
           "valor" => 2,
           "esMayorIgual"=> 0
@@ -423,6 +432,7 @@ class Card_GameController extends Controller
         $cardsName->nameCard = "card3";
 
         $cardsNamese = array(
+          "idCard" => 3,
           "nameCard" => $cardsName->nameCard,
           "valor" => 3,
           "esMayorIgual"=> 0
@@ -435,6 +445,7 @@ class Card_GameController extends Controller
         $cardsName->nameCard = "card4";
 
         $cardsNamese = array(
+          "idCard" => 4,
           "nameCard" => $cardsName->nameCard,
           "valor" => 4,
           "esMayorIgual"=> 0
@@ -447,6 +458,7 @@ class Card_GameController extends Controller
         $cardsName->nameCard = "card5";
 
         $cardsNamese = array(
+          "idCard" => 5,
           "nameCard" => $cardsName->nameCard,
           "valor" => 5,
           "esMayorIgual"=> 0
@@ -459,6 +471,7 @@ class Card_GameController extends Controller
         $cardsName->nameCard = "card6";
 
         $cardsNamese = array(
+          "idCard" => 6,
           "nameCard" => $cardsName->nameCard,
           "valor" => 6,
           "esMayorIgual"=> 0
@@ -471,6 +484,7 @@ class Card_GameController extends Controller
         $cardsName->nameCard = "cardOtorongo";
 
         $cardsNamese = array(
+          "idCard" => 7,
           "nameCard" => $cardsName->nameCard,
           "valor" => 10,
           "esMayorIgual"=> 0
