@@ -203,7 +203,7 @@ class Card_GameController extends Controller
           "idCard" => 1,
           "nameCard" => $cardsName->nameCard,
           "valor" => 1,
-          "esMayorIgual"=> 0
+          "esMayorIgual" => 0
         );
         array_push($cardsNames, $cardsNamese);
       }
@@ -217,7 +217,7 @@ class Card_GameController extends Controller
           "idCard" => 2,
           "nameCard" => $cardsName->nameCard,
           "valor" => 2,
-          "esMayorIgual"=> 0
+          "esMayorIgual" => 0
         );
         array_push($cardsNames, $cardsNamese);
       }
@@ -230,7 +230,7 @@ class Card_GameController extends Controller
           "idCard" => 3,
           "nameCard" => $cardsName->nameCard,
           "valor" => 3,
-          "esMayorIgual"=> 0
+          "esMayorIgual" => 0
         );
         array_push($cardsNames, $cardsNamese);
       }
@@ -243,7 +243,7 @@ class Card_GameController extends Controller
           "idCard" => 4,
           "nameCard" => $cardsName->nameCard,
           "valor" => 4,
-          "esMayorIgual"=> 0
+          "esMayorIgual" => 0
         );
         array_push($cardsNames, $cardsNamese);
       }
@@ -256,7 +256,7 @@ class Card_GameController extends Controller
           "idCard" => 5,
           "nameCard" => $cardsName->nameCard,
           "valor" => 5,
-          "esMayorIgual"=> 0
+          "esMayorIgual" => 0
         );
         array_push($cardsNames, $cardsNamese);
       }
@@ -269,7 +269,7 @@ class Card_GameController extends Controller
           "idCard" => 6,
           "nameCard" => $cardsName->nameCard,
           "valor" => 6,
-          "esMayorIgual"=> 0
+          "esMayorIgual" => 0
         );
         array_push($cardsNames, $cardsNamese);
       }
@@ -282,7 +282,7 @@ class Card_GameController extends Controller
           "idCard" => 7,
           "nameCard" => $cardsName->nameCard,
           "valor" => 10,
-          "esMayorIgual"=> 0
+          "esMayorIgual" => 0
         );
         array_push($cardsNames, $cardsNamese);
       }
@@ -298,8 +298,8 @@ class Card_GameController extends Controller
 
     //nos aseguramos que estamos enviando una carta con stock mayor a 0
     $cardMesa = $cardsMesa->random();
-    
-    
+
+
     if ($cardMesa->cardStock > 0) {
       $stockNew = $cardMesa->cardStock - 1;
 
@@ -310,7 +310,7 @@ class Card_GameController extends Controller
           $cardMesaNew['idMesa'] = $request->idMesa;
           $cardMesaNew['card_1_In_Mesa'] = 1;
           $cardMesaNew->save();
-                 
+
           $cardMesaName->nameCard = "card1";
           $cardMesaName->valor = 1;
           break;
@@ -319,7 +319,7 @@ class Card_GameController extends Controller
           $cardMesaNew['idMesa'] = $request->idMesa;
           $cardMesaNew['card_2_In_Mesa'] = 1;
           $cardMesaNew->save();
-          
+
           $cardMesaName->nameCard = "card2";
           $cardMesaName->valor = 2;
           break;
@@ -328,7 +328,7 @@ class Card_GameController extends Controller
           $cardMesaNew['idMesa'] = $request->idMesa;
           $cardMesaNew['card_3_In_Mesa'] = 1;
           $cardMesaNew->save();
-         
+
           $cardMesaName->nameCard = "card3";
           $cardMesaName->valor = 3;
           break;
@@ -346,7 +346,7 @@ class Card_GameController extends Controller
           $cardMesaNew['idMesa'] = $request->idMesa;
           $cardMesaNew['card_5_In_Mesa'] = 1;
           $cardMesaNew->save();
-          
+
 
           $cardMesaName->nameCard = "card5";
           $cardMesaName->valor = 5;
@@ -356,7 +356,7 @@ class Card_GameController extends Controller
           $cardMesaNew['idMesa'] = $request->idMesa;
           $cardMesaNew['card_6_In_Mesa'] = 1;
           $cardMesaNew->save();
-          
+
 
           $cardMesaName->nameCard = "card6";
           $cardMesaName->valor = 6;
@@ -366,7 +366,7 @@ class Card_GameController extends Controller
           $cardMesaNew['idMesa'] = $request->idMesa;
           $cardMesaNew['card_Otorongo_In_Mesa'] = 1;
           $cardMesaNew->save();
-          
+
 
           $cardMesaName->nameCard = "cardOtorongo";
           $cardMesaName->valor = 10;
@@ -408,7 +408,7 @@ class Card_GameController extends Controller
           "idCard" => 1,
           "nameCard" => $cardsName->nameCard,
           "valor" => 1,
-          "esMayorIgual"=> 0
+          "esMayorIgual" => 0
         );
         array_push($cardsNames, $cardsNamese);
       }
@@ -422,7 +422,7 @@ class Card_GameController extends Controller
           "idCard" => 2,
           "nameCard" => $cardsName->nameCard,
           "valor" => 2,
-          "esMayorIgual"=> 0
+          "esMayorIgual" => 0
         );
         array_push($cardsNames, $cardsNamese);
       }
@@ -435,7 +435,7 @@ class Card_GameController extends Controller
           "idCard" => 3,
           "nameCard" => $cardsName->nameCard,
           "valor" => 3,
-          "esMayorIgual"=> 0
+          "esMayorIgual" => 0
         );
         array_push($cardsNames, $cardsNamese);
       }
@@ -448,7 +448,7 @@ class Card_GameController extends Controller
           "idCard" => 4,
           "nameCard" => $cardsName->nameCard,
           "valor" => 4,
-          "esMayorIgual"=> 0
+          "esMayorIgual" => 0
         );
         array_push($cardsNames, $cardsNamese);
       }
@@ -461,7 +461,7 @@ class Card_GameController extends Controller
           "idCard" => 5,
           "nameCard" => $cardsName->nameCard,
           "valor" => 5,
-          "esMayorIgual"=> 0
+          "esMayorIgual" => 0
         );
         array_push($cardsNames, $cardsNamese);
       }
@@ -474,7 +474,7 @@ class Card_GameController extends Controller
           "idCard" => 6,
           "nameCard" => $cardsName->nameCard,
           "valor" => 6,
-          "esMayorIgual"=> 0
+          "esMayorIgual" => 0
         );
         array_push($cardsNames, $cardsNamese);
       }
@@ -487,7 +487,7 @@ class Card_GameController extends Controller
           "idCard" => 7,
           "nameCard" => $cardsName->nameCard,
           "valor" => 10,
-          "esMayorIgual"=> 0
+          "esMayorIgual" => 0
         );
         array_push($cardsNames, $cardsNamese);
       }
@@ -500,73 +500,416 @@ class Card_GameController extends Controller
     ]);
   }
 
-  public function getcardMesa(Request $request){
+  public function getcardMesa(Request $request)
+  {
     $cardMesa = Cards_mesa::where('idMesa', $request->idMesa)->first();
 
     $cardMesaName = new stdClass();
-      if ($cardMesa->card_1_In_Mesa == 1) {
+    if ($cardMesa->card_1_In_Mesa == 1) {
 
-        $cardMesaName->nameCard = "card1";
-        $cardMesaName->valor = 1;
+      $cardMesaName->nameCard = "card1";
+      $cardMesaName->valor = 1;
 
-        return response()->json([
-          'cards' => $cardMesaName
-        ]);
+      return response()->json([
+        'cards' => $cardMesaName
+      ]);
+    }
+    if ($cardMesa->card_2_In_Mesa == 1) {
+
+      $cardMesaName->nameCard = "card2";
+      $cardMesaName->valor = 2;
+
+      return response()->json([
+        'cards' => $cardMesaName
+      ]);
+    }
+    if ($cardMesa->card_3_In_Mesa == 1) {
+
+      $cardMesaName->nameCard = "card3";
+      $cardMesaName->valor = 3;
+
+      return response()->json([
+        'cards' => $cardMesaName
+      ]);
+    }
+    if ($cardMesa->card_4_In_Mesa == 1) {
+
+      $cardMesaName->nameCard = "card4";
+      $cardMesaName->valor = 4;
+
+      return response()->json([
+        'cards' => $cardMesaName
+      ]);
+    }
+    if ($cardMesa->card_5_In_Mesa == 1) {
+
+      $cardMesaName->nameCard = "card5";
+      $cardMesaName->valor = 5;
+
+      return response()->json([
+        'cards' => $cardMesaName
+      ]);
+    }
+    if ($cardMesa->card_6_In_Mesa == 1) {
+
+      $cardMesaName->nameCard = "card6";
+      $cardMesaName->valor = 6;
+
+      return response()->json([
+        'cards' => $cardMesaName
+      ]);
+    }
+    if ($cardMesa->card_Otorongo_In_Mesa == 1) {
+
+      $cardMesaName->nameCard = "cardOtorongo";
+      $cardMesaName->valor = 10;
+
+      return response()->json([
+        'cards' => $cardMesaName
+      ]);
+    }
+  }
+
+  //cuando pones una carta en la mesa
+  public function cardUserUpdate(Request $request)
+  {
+   
+    switch ($request->idCard) {
+
+      case 1:
+
+       $stock = Cards_user::select('card_1_In_Game')
+        ->where('idMesa', $request->idMesa)
+        ->where('idUser', $request->idUser)
+        ->first();
+
+        Cards_user::where('idMesa', $request->idMesa)
+          ->where('idUser', $request->idUser)
+          ->update([
+            'card_1_In_Game' => $stock->card_1_In_Game - 1
+          ]);
+          break;
+
+      case 2:
+
+        $stock = Cards_user::select('card_2_In_Game')
+        ->where('idMesa', $request->idMesa)
+        ->where('idUser', $request->idUser)
+        ->first();
+
+        Cards_user::where('idMesa', $request->idMesa)
+          ->where('idUser', $request->idUser)
+          ->update([
+            'card_2_In_Game' => $stock->card_2_In_Game - 1
+          ]);
+          break;
+      case 3:
+
+        $stock = Cards_user::select('card_3_In_Game')
+        ->where('idMesa', $request->idMesa)
+        ->where('idUser', $request->idUser)
+        ->first();
+
+        Cards_user::where('idMesa', $request->idMesa)
+          ->where('idUser', $request->idUser)
+          ->update([
+            'card_3_In_Game' => $stock->card_3_In_Game - 1
+          ]);
+          break;
+      case 4:
+
+        $stock = Cards_user::select('card_4_In_Game')
+        ->where('idMesa', $request->idMesa)
+        ->where('idUser', $request->idUser)
+        ->first();
+
+        Cards_user::where('idMesa', $request->idMesa)
+          ->where('idUser', $request->idUser)
+          ->update([
+            'card_4_In_Game' => $stock->card_4_In_Game - 1
+          ]);
+          break;
+      case 5:
+
+        $stock = Cards_user::select('card_5_In_Game')
+        ->where('idMesa', $request->idMesa)
+        ->where('idUser', $request->idUser)
+        ->first();
+
+        Cards_user::where('idMesa', $request->idMesa)
+          ->where('idUser', $request->idUser)
+          ->update([
+            'card_5_In_Game' => $stock->card_5_In_Game - 1
+          ]);
+          break;
+      case 6:
+
+        $stock = Cards_user::select('card_6_In_Game')
+        ->where('idMesa', $request->idMesa)
+        ->where('idUser', $request->idUser)
+        ->first();
+
+        Cards_user::where('idMesa', $request->idMesa)
+          ->where('idUser', $request->idUser)
+          ->update([
+            'card_6_In_Game' => $stock->card_6_In_Game - 1
+          ]);
+          break;
+      case 7:
+
+        $stock = Cards_user::select('card_Otorongo_In_Game')
+        ->where('idMesa', $request->idMesa)
+        ->where('idUser', $request->idUser)
+        ->first();
+
+        Cards_user::where('idMesa', $request->idMesa)
+          ->where('idUser', $request->idUser)
+          ->update([
+            'card_Otorongo_In_Game' => $stock->card_Otorongo_In_Game - 1
+          ]);
+          break;
+    }
+
+    return response()->json([
+      'mensaje' => "se resto uno del stock de la carta",
+      "user" => $request->idUser
+    ]);
+  }
+
+
+  public function robarCarta(Request $request){
+    
+    $sumaStock = Cards_game::where('idMesa', $request->idMesa)->get()->sum('cardStock');
+    if ($sumaStock > 0) {
+
+      $cardsName = new stdClass();
+      $card = [];
+
+      //elegir una carta random
+   $random = Cards_game::where('idMesa', $request->idMesa)
+   ->where('cardStock','>',0)
+   ->get()->random();
+
+      switch ($random->idCard) {
+
+        case 1:
+          $cardsName->nameCard = "card1";
+          $cardsNamese = array(
+            "idCard" => 1,
+            "nameCard" => $cardsName->nameCard,
+            "valor" => 1,
+            "esMayorIgual" => 0
+          );
+          array_push($card, $cardsNamese);
+  
+          //la carta random elegida descontarle al card_game
+          Cards_game::where('idMesa', $request->idMesa)
+          ->where('idCard', $random->idCard)
+          ->update([
+           'cardStock' => $random->cardStock - 1
+         ]);
+  
+           //esa misma carta sumarle al cards_user
+         $stock = Cards_user::select('card_1_In_Game')
+          ->where('idMesa', $request->idMesa)
+          ->where('idUser', $request->idUser)
+          ->first();
+  
+          Cards_user::where('idMesa', $request->idMesa)
+            ->where('idUser', $request->idUser)
+            ->update([
+              'card_1_In_Game' => $stock->card_1_In_Game + 1
+            ]);
+            break;
+  
+        case 2:
+          $cardsName->nameCard = "card2";
+          $cardsNamese = array(
+            "idCard" => 2,
+            "nameCard" => $cardsName->nameCard,
+            "valor" => 2,
+            "esMayorIgual" => 0
+          );
+          array_push($card, $cardsNamese);
+  
+          //la carta random elegida descontarle al card_game
+          Cards_game::where('idMesa', $request->idMesa)
+          ->where('idCard', $random->idCard)
+          ->update([
+           'cardStock' => $random->cardStock - 1
+         ]);
+  
+          $stock = Cards_user::select('card_2_In_Game')
+          ->where('idMesa', $request->idMesa)
+          ->where('idUser', $request->idUser)
+          ->first();
+  
+           Cards_user::where('idMesa', $request->idMesa)
+            ->where('idUser', $request->idUser)
+            ->update([
+              'card_2_In_Game' => $stock->card_2_In_Game + 1
+            ]);
+            break;
+        case 3:
+          $cardsName->nameCard = "card3";
+          $cardsNamese = array(
+            "idCard" => 3,
+            "nameCard" => $cardsName->nameCard,
+            "valor" => 3,
+            "esMayorIgual" => 0
+          );
+          array_push($card, $cardsNamese);
+  
+          //la carta random elegida descontarle al card_game
+          Cards_game::where('idMesa', $request->idMesa)
+          ->where('idCard', $random->idCard)
+          ->update([
+           'cardStock' => $random->cardStock - 1
+         ]);
+  
+          $stock = Cards_user::select('card_3_In_Game')
+          ->where('idMesa', $request->idMesa)
+          ->where('idUser', $request->idUser)
+          ->first();
+  
+          Cards_user::where('idMesa', $request->idMesa)
+            ->where('idUser', $request->idUser)
+            ->update([
+              'card_3_In_Game' => $stock->card_3_In_Game + 1
+            ]);
+            break;
+  
+        case 4:
+          $cardsName->nameCard = "card4";
+          $cardsNamese = array(
+            "idCard" => 4,
+            "nameCard" => $cardsName->nameCard,
+            "valor" => 4,
+            "esMayorIgual" => 0
+          );
+          array_push($card, $cardsNamese);
+          //la carta random elegida descontarle al card_game
+          Cards_game::where('idMesa', $request->idMesa)
+          ->where('idCard', $random->idCard)
+          ->update([
+           'cardStock' => $random->cardStock - 1
+         ]);
+  
+          $stock = Cards_user::select('card_4_In_Game')
+          ->where('idMesa', $request->idMesa)
+          ->where('idUser', $request->idUser)
+          ->first();
+  
+             Cards_user::where('idMesa', $request->idMesa)
+            ->where('idUser', $request->idUser)
+            ->update([
+              'card_4_In_Game' => $stock->card_4_In_Game + 1
+            ]);
+            break;
+  
+        case 5:
+          $cardsName->nameCard = "card5";
+          $cardsNamese = array(
+            "idCard" => 5,
+            "nameCard" => $cardsName->nameCard,
+            "valor" => 5,
+            "esMayorIgual" => 0
+          );
+          array_push($card, $cardsNamese);
+  
+          //la carta random elegida descontarle al card_game
+          Cards_game::where('idMesa', $request->idMesa)
+          ->where('idCard', $random->idCard)
+          ->update([
+           'cardStock' => $random->cardStock - 1
+         ]);
+         
+          $stock = Cards_user::select('card_5_In_Game')
+          ->where('idMesa', $request->idMesa)
+          ->where('idUser', $request->idUser)
+          ->first();
+  
+           Cards_user::where('idMesa', $request->idMesa)
+            ->where('idUser', $request->idUser)
+            ->update([
+              'card_5_In_Game' => $stock->card_5_In_Game + 1
+            ]);
+            break;
+  
+        case 6:
+          $cardsName->nameCard = "card6";
+          $cardsNamese = array(
+            "idCard" => 6,
+            "nameCard" => $cardsName->nameCard,
+            "valor" => 6,
+            "esMayorIgual" => 0
+          );
+          array_push($card, $cardsNamese);
+  
+          //la carta random elegida descontarle al card_game
+          Cards_game::where('idMesa', $request->idMesa)
+          ->where('idCard', $random->idCard)
+          ->update([
+           'cardStock' => $random->cardStock - 1
+         ]);
+  
+          $stock = Cards_user::select('card_6_In_Game')
+          ->where('idMesa', $request->idMesa)
+          ->where('idUser', $request->idUser)
+          ->first();
+  
+         Cards_user::where('idMesa', $request->idMesa)
+            ->where('idUser', $request->idUser)
+            ->update([
+              'card_6_In_Game' => $stock->card_6_In_Game + 1
+            ]);
+            break;
+  
+        case 7:
+          $cardsName->nameCard = "cardOtorongo";
+          $cardsNamese = array(
+            "idCard" => 7,
+            "nameCard" => $cardsName->nameCard,
+            "valor" => 10,
+            "esMayorIgual" => 0
+          );
+          array_push($card, $cardsNamese);
+  
+          //la carta random elegida descontarle al card_game
+          Cards_game::where('idMesa', $request->idMesa)
+          ->where('idCard', $random->idCard)
+          ->update([
+           'cardStock' => $random->cardStock - 1
+         ]);
+  
+          $stock = Cards_user::select('card_Otorongo_In_Game')
+          ->where('idMesa', $request->idMesa)
+          ->where('idUser', $request->idUser)
+          ->first();
+  
+          Cards_user::where('idMesa', $request->idMesa)
+            ->where('idUser', $request->idUser)
+            ->update([
+              'card_Otorongo_In_Game' => $stock->card_Otorongo_In_Game + 1
+            ]);
+            break;
       }
-      if ($cardMesa->card_2_In_Mesa == 1) {
-        
-        $cardMesaName->nameCard = "card2";
-        $cardMesaName->valor = 2;
-
-        return response()->json([
-          'cards' => $cardMesaName
-        ]);
-      }
-      if ($cardMesa->card_3_In_Mesa == 1) {
-        
-        $cardMesaName->nameCard = "card3";
-        $cardMesaName->valor = 3;
-
-        return response()->json([
-          'cards' => $cardMesaName
-        ]);
-      }
-      if ($cardMesa->card_4_In_Mesa == 1) {
-        
-        $cardMesaName->nameCard = "card4";
-        $cardMesaName->valor = 4;
-
-        return response()->json([
-          'cards' => $cardMesaName
-        ]);
-      }
-      if ($cardMesa->card_5_In_Mesa == 1) {
-        
-        $cardMesaName->nameCard = "card5";
-        $cardMesaName->valor = 5;
-
-        return response()->json([
-          'cards' => $cardMesaName
-        ]);
-      }
-      if ($cardMesa->card_6_In_Mesa == 1) {
-        
-        $cardMesaName->nameCard = "card6";
-        $cardMesaName->valor = 6;
-
-        return response()->json([
-          'cards' => $cardMesaName
-        ]);
-      }
-      if ($cardMesa->card_Otorongo_In_Mesa == 1) {
-        
-        $cardMesaName->nameCard = "cardOtorongo";
-        $cardMesaName->valor = 10;
-
-        return response()->json([
-          'cards' => $cardMesaName
-        ]);
-      }
-
+  
+      return response()->json([
+        'mensaje' => "se le sumo uno carta al usuario y se actualizo el stock del maso",
+        "user" => $request->idUser,
+        "idCard" => $random->idCard,
+        "card" => $card,
+        "stock" => $sumaStock
+      ]);
+    }
+    else{
+      return response()->json([
+        'mensaje' => "no hay mas cartas para robar del mazo",
+        'stock' => $sumaStock
+      ]);
+    }
+   
+    
   }
 }

@@ -34,6 +34,8 @@ class MesasController extends Controller
 
   public function cardMesaUpdate(Request $request)
   {
+
+
     switch ($request->idCard) {
       case 1:
         $cardsMesa = Cards_mesa::where('idMesa', $request->idMesa)
@@ -70,6 +72,7 @@ class MesasController extends Controller
           ->update([
             'card_1_In_Mesa' => 0, 'card_2_In_Mesa' => 0, 'card_3_In_Mesa' => 0, 'card_4_In_Mesa' => 0, 'card_5_In_Mesa' => 0, 'card_6_In_Mesa' => 1, 'card_Otorongo_In_Mesa' => 0
           ]);
+          break;
       case 7:
         $cardsMesa = Cards_mesa::where('idMesa', $request->idMesa)
           ->update([
