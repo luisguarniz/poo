@@ -31,8 +31,24 @@ class PuntosController extends Controller
      ->where('idUser',$request->idUser)->first();
 
      $puntos = $registro->puntos_Cartas_Acumuladas + $request->puntos;
-     
 
+     if ($puntos > 39) {
+
+     $puntosVictorias = Punto::where('idMesa',$request->idMesa)
+      ->where('idUser',$request->idGanador)->first();
+
+      Punto::where('idMesa',$request->idMesa)
+      ->where('idUser',$request->idGanador)
+      ->update([
+        'puntos_Victorias'=> $puntosVictorias->puntos_Victorias + 1
+      ]); 
+      $participantes = Punto::where('idMesa',$request->idMesa)->orderBy('puntos_Cartas_Acumuladas')->get();
+      return response()->json([
+        '$participantes' => $participantes
+      ]);
+     }
+     else
+     {
       Punto::where('idMesa',$request->idMesa)
       ->where('idUser',$request->idUser)
       ->update([
@@ -42,6 +58,10 @@ class PuntosController extends Controller
       return response()->json([
         'mensaje' => "se Actualizo los puntos de las cartas acumuladas"
       ]);
+
+     }
+
+      
     }
 
     public function getSumPoints(Request $request){
