@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\Card_GameController;
 use App\Http\Controllers\Api\MesasController;
 use App\Http\Controllers\Api\MessageController;
+use App\Http\Controllers\Api\PuntosController;
 use App\Http\Controllers\Api\RoomController;
 use App\Http\Controllers\Api\Session_GameController;
 use App\Http\Controllers\Api\Session_TurnController;
@@ -72,7 +73,12 @@ Route::put("Mesa/cardMesaUpdate",[MesasController::class, 'cardMesaUpdate'])->na
 //Rutas Session_Game
 Route::get("Session_game/makeSessionGame/{roomID}",[Session_GameController::class, 'makeSessionGame'])->name('Session_game.makeSessionGame');
 
-//Rutas Session_Trun
+//Rutas Punto
+Route::post("Punto/makePoints",[PuntosController::class, 'makePoints'])->name('Puntos.makePoints');
+Route::get("Punto/getSumPoints/{idMesa}",[PuntosController::class, 'makePoints'])->name('Puntos.getSumPoints');
+Route::put("Punto/updatePoints",[PuntosController::class, 'updatePoints'])->name('Puntos.updatePoints');
+
+//Rutas Session_Turn
 Route::post("Session_turn/makeSessionTurn",[Session_TurnController::class, 'makeSessionTurn'])->name('Session_turn.makeSessionTurn');
 Route::put("Session_turn/changeTurn",[Session_TurnController::class, 'changeTurn'])->name('Session_turn.changeTurn');
 Route::get("Session_turn/getTurn/{idSessionGame}",[Session_TurnController::class, 'getTurn'])->name('Session_turn.getTurn');

@@ -24,7 +24,7 @@ class MessageEvent implements ShouldBroadcast
     {
         $this->response = [
             'idMesa' => $message['idMesa'],
-            'repartirTrue'   => $message['repartirTrue'],
+            'mensaje'   => $message['mensaje'],
             'to'           => $message['to'],
             'from'         => auth()->user(),
         ];

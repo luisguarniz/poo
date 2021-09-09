@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Cards_game;
 use App\Models\Cards_mesa;
 use App\Models\Cards_user;
+use App\Models\Punto;
 use Illuminate\Http\Request;
 use stdClass;
 
@@ -908,8 +909,6 @@ class Card_GameController extends Controller
         'mensaje' => "no hay mas cartas para robar del mazo",
         'stock' => $sumaStock
       ]);
-    }
-   
-    
+    } 
   }
 }
