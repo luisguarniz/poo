@@ -34,6 +34,12 @@ class PuntosController extends Controller
 
      if ($puntos > 39) {
 
+      Punto::where('idMesa',$request->idMesa)
+      ->where('idUser',$request->idUser)
+      ->update([
+        'puntos_Cartas_Acumuladas'=> $puntos
+      ]);
+
      $puntosVictorias = Punto::where('idMesa',$request->idMesa)
       ->where('idUser',$request->idGanador)->first();
 
@@ -79,5 +85,13 @@ class PuntosController extends Controller
        return response()->json([
         '$userPerdedor' => $userPerdedor
       ]);
+      }
+
+      public function resetPoints(Request $request){
+
+        Punto::where('idMesa', $request->idMesa)
+        ->update([
+          'puntos_Cartas_Acumuladas'=> 0
+        ]);
       }
 }

@@ -65,6 +65,8 @@ Route::post("Cards_game/getCardsUser",[Card_GameController::class, 'getCardsUser
 Route::get("Cards_game/getcardMesa/{idMesa}",[Card_GameController::class, 'getcardMesa'])->name('Cards_game.getcardMesa');
 Route::put("Cards_game/cardUserUpdate",[Card_GameController::class, 'cardUserUpdate'])->name('Cards_game.cardUserUpdate');
 Route::put("Cards_game/robarCarta",[Card_GameController::class, 'robarCarta'])->name('Cards_game.robarCarta');
+Route::put("Cards_game/updateCardsGame",[Card_GameController::class, 'updateCardsGame'])->name('Cards_game.updateCardsGame');
+Route::put("Cards_game/updateCardsUser",[Card_GameController::class, 'updateCardsUser'])->name('Cards_game.updateCardsUser');
 
 //Rutas Mesas
 Route::get("Mesa/makeMesa/{idSessionGame}",[MesasController::class, 'makeMesa'])->name('Mesa.makeMesa');
@@ -77,6 +79,7 @@ Route::get("Session_game/makeSessionGame/{roomID}",[Session_GameController::clas
 Route::post("Punto/makePoints",[PuntosController::class, 'makePoints'])->name('Puntos.makePoints');
 Route::get("Punto/getSumPoints/{idMesa}",[PuntosController::class, 'makePoints'])->name('Puntos.getSumPoints');
 Route::put("Punto/updatePoints",[PuntosController::class, 'updatePoints'])->name('Puntos.updatePoints');
+Route::get("Punto/resetPoints/{idMesa}",[PuntosController::class, 'resetPoints'])->name('Puntos.resetPoints');
 
 //Rutas Session_Turn
 Route::post("Session_turn/makeSessionTurn",[Session_TurnController::class, 'makeSessionTurn'])->name('Session_turn.makeSessionTurn');
