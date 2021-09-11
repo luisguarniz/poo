@@ -142,5 +142,24 @@ class Session_TurnController extends Controller
 
     }
 
+    public function resetearTurnos(Request $request){
+
+      Session_turn::where('idSessionGame', $request->idSessionGame)
+        ->update([
+          'turn' => false,
+        ]);
+        //elejimos un numero de los jugadores para que empiece a jugar
+        //luego seguira el numero siguiente en jugar
+        $idPrimerJugador = Session_turn::where('session_turns.idSessionGame', $request->idSessionGame)->get()->random();
+
+
+        Session_turn::where('session_turns.idUser', $idPrimerJugador->idUser)
+        ->update([
+          'turn' => true,
+        ]);
+        return response()->json([
+            'first' => $idPrimerJugador->idUser
+          ]);
+    }
 
 }

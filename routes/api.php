@@ -85,7 +85,7 @@ Route::get("Punto/resetPoints/{idMesa}",[PuntosController::class, 'resetPoints']
 Route::post("Session_turn/makeSessionTurn",[Session_TurnController::class, 'makeSessionTurn'])->name('Session_turn.makeSessionTurn');
 Route::put("Session_turn/changeTurn",[Session_TurnController::class, 'changeTurn'])->name('Session_turn.changeTurn');
 Route::get("Session_turn/getTurn/{idSessionGame}",[Session_TurnController::class, 'getTurn'])->name('Session_turn.getTurn');
-
+Route::put("Session_turn/resetearTurnos",[Session_TurnController::class, 'resetearTurnos'])->name('Session_turn.resetearTurnos');
 //rutas para mensajes websocket
 
 Route::post('Message/messageWebsocket',[MessageController::class, 'messageWebsocket'])
