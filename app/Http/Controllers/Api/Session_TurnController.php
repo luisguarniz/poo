@@ -76,6 +76,7 @@ class Session_TurnController extends Controller
       ->where('session_turns.idSessionGame', $request->idSessionGame)
       ->where('session_turns.orderTurn', 1)
       ->first();
+
       
      $customName = DB::table('users')
      ->select('users.customName')
@@ -116,9 +117,9 @@ class Session_TurnController extends Controller
     }
 
     public function getTurn(Request $request){
-
-       $inTurn = Session_turn::where('session_turns.idSessionGame', $request->idSessionGame)
-       ->where('session_turns.turn', true)->first();
+      
+       $inTurn = Session_turn::where('idSessionGame', $request->idSessionGame)
+       ->where('turn', true)->first();
 
        return response()->json([
         'turn' => $inTurn

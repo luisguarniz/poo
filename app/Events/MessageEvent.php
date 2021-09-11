@@ -22,12 +22,23 @@ class MessageEvent implements ShouldBroadcast
      */
     public function __construct($message)
     {
-        $this->response = [
-            'idMesa' => $message['idMesa'],
-            'mensaje'   => $message['mensaje'],
-            'to'           => $message['to'],
-            'from'         => auth()->user(),
-        ];
+        //colocamos un if para enviar las variables que le interesa a cada mensaje web socket segun lo que pide el cliente
+        if (isset($message['idSessionGame'])) {
+            $this->response = [
+                'idSessionGame' => $message['idSessionGame'],
+                'firstGamer' => $message['firstGamer'],
+                'mensaje'   => $message['mensaje'],
+                'to'           => $message['to'],
+                'from'         => auth()->user(),
+            ];
+        }else{
+            $this->response = [
+                'idMesa' => $message['idMesa'],
+                'mensaje'   => $message['mensaje'],
+                'to'           => $message['to'],
+                'from'         => auth()->user(),
+            ];
+        }
     }
 
     /**
