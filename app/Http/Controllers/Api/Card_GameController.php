@@ -78,11 +78,7 @@ class Card_GameController extends Controller
 
         $cards = Cards_game::where('idMesa', $request->idMesa)->get();
         return response()->json([
-          'message' => "se registraron las cartas a jugar",
-          'cards' => $cards,
-          '$cartas A jugar' => $cartasAjugar,
-          'otorongo' => $valor,
-          '$Sumvalor' => $Sumvalor
+          'cartasMazo' => "se crearon las cartas"
         ]);
       }
 
@@ -1285,5 +1281,16 @@ class Card_GameController extends Controller
         'message' => "ocurrio un problema al asignar una carta a la mesa"
       ]);
     }
+  }
+
+  public function getcartasMazo(Request $request){
+    $cartasMazo =  Cards_game::select('cardStock')
+     ->where('idMesa', $request->idMesa)
+     ->get()
+     ->sum('cardStock');
+
+     return response()->json([
+      'cartasMazo' => $cartasMazo
+    ]);
   }
 }

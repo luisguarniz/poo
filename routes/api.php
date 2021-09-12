@@ -67,6 +67,8 @@ Route::put("Cards_game/cardUserUpdate",[Card_GameController::class, 'cardUserUpd
 Route::put("Cards_game/robarCarta",[Card_GameController::class, 'robarCarta'])->name('Cards_game.robarCarta');
 Route::put("Cards_game/updateCardsGame",[Card_GameController::class, 'updateCardsGame'])->name('Cards_game.updateCardsGame');
 Route::put("Cards_game/updateCardsUser",[Card_GameController::class, 'updateCardsUser'])->name('Cards_game.updateCardsUser');
+Route::get("Cards_game/getcartasMazo/{idMesa}",[Card_GameController::class, 'getcartasMazo'])->name('Cards_game.getcartasMazo');
+
 
 //Rutas Mesas
 Route::get("Mesa/makeMesa/{idSessionGame}",[MesasController::class, 'makeMesa'])->name('Mesa.makeMesa');
