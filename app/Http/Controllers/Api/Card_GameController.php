@@ -38,20 +38,14 @@ class Card_GameController extends Controller
       $cartasAjugar = $Mazo / 2;
       $cartasAjugarmenosStock = $Mazo / 2;
     } elseif ($nroDeUsuarios < 7) {
-      return response()->json([
-        'message' => "entro al if - de 7",
-        'nroDeUsuarios' => $nroDeUsuarios
-      ]);
+      
       $nroDeBarajas = 2;
       $nroCartasXtipoXmazo = $nroDeBarajas * $cartasXtipoXBaraja;
       $Mazo = $nroCartasXtipoXmazo * $tiposCartas;
       $cartasAjugar = $Mazo / 2;
       $cartasAjugarmenosStock = $Mazo / 2;
-    } elseif ($nroDeUsuarios < 10) {
-      return response()->json([
-        'message' => "entro al if - de 10",
-        'nroDeUsuarios' => $nroDeUsuarios
-      ]);
+    } elseif ($nroDeUsuarios < 11) {
+      
       $nroDeBarajas = 3;
       $nroCartasXtipoXmazo = $nroDeBarajas * $cartasXtipoXBaraja;
       $Mazo = $nroCartasXtipoXmazo * $tiposCartas;
