@@ -81,6 +81,7 @@ Route::get("Session_game/makeSessionGame/{roomID}",[Session_GameController::clas
 Route::post("Punto/makePoints",[PuntosController::class, 'makePoints'])->name('Puntos.makePoints');
 Route::get("Punto/getSumPoints/{idMesa}",[PuntosController::class, 'makePoints'])->name('Puntos.getSumPoints');
 Route::put("Punto/updatePoints",[PuntosController::class, 'updatePoints'])->name('Puntos.updatePoints');
+Route::put("Punto/updatePointsWin",[PuntosController::class, 'updatePointsWin'])->name('Puntos.updatePointsWin');
 Route::get("Punto/resetPoints/{idMesa}",[PuntosController::class, 'resetPoints'])->name('Puntos.resetPoints');
 
 //Rutas Session_Turn

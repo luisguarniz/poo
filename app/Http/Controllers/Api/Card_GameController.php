@@ -1283,6 +1283,7 @@ class Card_GameController extends Controller
      ->get()
      ->sum('cardStock');
 
+
      return response()->json([
       'cartasMazo' => $cartasMazo
     ]);

@@ -25,6 +25,7 @@ class PuntosController extends Controller
           ]);
     }
 
+    // puntos de cartas acumuladas
     public function updatePoints(Request $request){
 
     $registro = Punto::where('idMesa',$request->idMesa)
@@ -32,42 +33,33 @@ class PuntosController extends Controller
 
      $puntos = $registro->puntos_Cartas_Acumuladas + $request->puntos;
 
-     if ($puntos > 39) {
-
       Punto::where('idMesa',$request->idMesa)
       ->where('idUser',$request->idUser)
       ->update([
         'puntos_Cartas_Acumuladas'=> $puntos
       ]);
 
-     $puntosVictorias = Punto::where('idMesa',$request->idMesa)
-      ->where('idUser',$request->idGanador)->first();
-
-      Punto::where('idMesa',$request->idMesa)
-      ->where('idUser',$request->idGanador)
-      ->update([
-        'puntos_Victorias'=> $puntosVictorias->puntos_Victorias + 1
+      return response()->json([
+        'puntos' => $puntos
       ]); 
-      $participantes = Punto::where('idMesa',$request->idMesa)->orderBy('puntos_Cartas_Acumuladas')->get();
-      return response()->json([
-        '$participantes' => $participantes
-      ]);
-     }
-     else
-     {
-      Punto::where('idMesa',$request->idMesa)
-      ->where('idUser',$request->idUser)
-      ->update([
-        'puntos_Cartas_Acumuladas'=> $puntos
-      ]);
 
-      return response()->json([
-        'mensaje' => "se Actualizo los puntos de las cartas acumuladas"
-      ]);
+    }
+    public function updatePointsWin(Request $request){
+    
+       $puntosVictorias = Punto::where('idMesa',$request->idMesa)
+        ->where('idUser',$request->idUser)->first();
 
-     }
+        Punto::where('idMesa',$request->idMesa)
+        ->where('idUser',$request->idUser)
+        ->update([
+          'puntos_Victorias'=> $puntosVictorias->puntos_Victorias + 1
+        ]); 
 
-      
+        $participantes = Punto::where('idMesa',$request->idMesa)->orderBy('puntos_Cartas_Acumuladas')->get();
+        return response()->json([
+          '$participantes' => $participantes
+        ]);
+       
     }
 
     public function getSumPoints(Request $request){
