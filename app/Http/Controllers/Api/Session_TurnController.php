@@ -116,6 +116,48 @@ class Session_TurnController extends Controller
  
     }
 
+    public function quitarEnjuego(Request $request){
+      Session_turn::where("idSessionGame",$request->idSessionGame)
+      ->where("idUser",$request->idUser)
+      ->update([
+       'enJuego' => 0
+     ]);
+
+     return response()->json([
+      'mensaje' => "se te quito el turno"
+    ]);
+ }
+ public function siguienteTurno(Request $request){
+
+  $idsParticipantes = array();
+  $idsEnJuego = Session_turn::select('idUser')
+  ->where("idSessionGame",$request->idSessionGame)
+  ->where("enJuego", 1)
+  ->orderBy('idUser', 'asc')
+  ->get();
+  $arrayLength = count($idsEnJuego);
+
+  for ($i=0; $i < $arrayLength; $i++) { 
+    array_push($idsParticipantes,$idsEnJuego[$i]->idUser);
+  }
+
+  //tengo la posicion del idUser que cambiara
+  $posicion = array_search($request->idUser, $idsParticipantes);
+  $posicion = $posicion + 1;
+
+  if ($posicion == $arrayLength) {
+    $leToca = $idsParticipantes[0];
+  }
+  else{
+    $leToca = $idsParticipantes[$posicion];
+  }
+
+  return response()->json([
+    'idsEnJuego' => $leToca
+  ]);
+
+ }
+
     public function getTurn(Request $request){
       
        $inTurn = Session_turn::where('idSessionGame', $request->idSessionGame)

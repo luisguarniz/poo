@@ -89,8 +89,10 @@ Route::post("Session_turn/makeSessionTurn",[Session_TurnController::class, 'make
 Route::put("Session_turn/changeTurn",[Session_TurnController::class, 'changeTurn'])->name('Session_turn.changeTurn');
 Route::get("Session_turn/getTurn/{idSessionGame}",[Session_TurnController::class, 'getTurn'])->name('Session_turn.getTurn');
 Route::put("Session_turn/resetearTurnos",[Session_TurnController::class, 'resetearTurnos'])->name('Session_turn.resetearTurnos');
-//rutas para mensajes websocket
+Route::put("Session_turn/quitarEnjuego",[Session_TurnController::class, 'quitarEnjuego'])->name('Session_turn.quitarEnjuego');
+Route::put("Session_turn/siguienteTurno",[Session_TurnController::class, 'siguienteTurno'])->name('Session_turn.siguienteTurno');
 
+//rutas para mensajes websocket
 Route::post('Message/messageWebsocket',[MessageController::class, 'messageWebsocket'])
 ->name('MessageController.messageWebsocket')
 ->middleware('auth:api');
