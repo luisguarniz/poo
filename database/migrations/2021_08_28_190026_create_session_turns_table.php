@@ -19,6 +19,7 @@ class CreateSessionTurnsTable extends Migration
             $table->unsignedBigInteger("idSessionGame");
             $table->boolean('turn')->default('0');
             $table->integer('orderTurn')->default('1');
+            $table->boolean('enJuego')->default('1');//este campo sirve para el jugador que se desactiva durante el juego por no tener cartas que poner
             $table->timestamps();
 
 
