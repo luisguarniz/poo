@@ -141,6 +141,14 @@ class Session_TurnController extends Controller
   ->get();
   $arrayLength = count($idsEnJuego);
 
+  if ($arrayLength == 0) {
+
+    return response()->json([
+      'nextTurn' => $arrayLength
+    ]);
+  
+  }
+ 
   for ($i=0; $i < $arrayLength; $i++) { 
     array_push($idsParticipantes,$idsEnJuego[$i]->idUser);
   }
