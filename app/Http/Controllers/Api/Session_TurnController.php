@@ -42,10 +42,8 @@ class Session_TurnController extends Controller
             'first' => $idPrimerJugador->idUser
           ]);
     }
-
+/* 
     public function changeTurn(Request $request){
-
-
       //cambio el estado del turn del idUser enviado a 0
        Session_turn::where('session_turns.idUser', $request->idUser)
        ->update([
@@ -115,7 +113,7 @@ class Session_TurnController extends Controller
        ]);
  
     }
-
+*/
     public function quitarEnjuego(Request $request){
       Session_turn::where("idSessionGame",$request->idSessionGame)
       ->where("idUser",$request->idUser)
@@ -127,7 +125,13 @@ class Session_TurnController extends Controller
       'mensaje' => "se te quito el turno"
     ]);
  }
- public function siguienteTurno(Request $request){
+ public function changeTurn(Request $request){
+
+  //cambio el estado del turn del idUser enviado a 0
+  Session_turn::where('session_turns.idUser', $request->idUser)
+  ->update([
+   'turn' => false,
+ ]);
 
   $idsParticipantes = array();
   $idsEnJuego = Session_turn::select('idUser')
@@ -147,15 +151,41 @@ class Session_TurnController extends Controller
 
   if ($posicion == $arrayLength) {
     $leToca = $idsParticipantes[0];
+    Session_turn::where("idSessionGame",$request->idSessionGame)
+    ->where("idUser",$leToca)
+    ->update([
+      'turn' => true
+    ]);
+
+    $customName = DB::table('users')
+    ->select('users.customName')
+    ->where('users.id', $leToca)
+    ->first();
+
+     return response()->json([
+       'nextTurn' => $leToca,
+       'customName'=> $customName
+     ]);
+
   }
   else{
     $leToca = $idsParticipantes[$posicion];
+    Session_turn::where("idSessionGame",$request->idSessionGame)
+    ->where("idUser",$leToca)
+    ->update([
+      'turn' => true
+    ]);
+
+    $customName = DB::table('users')
+      ->select('users.customName')
+      ->where('users.id', $leToca)
+      ->first();
+ 
+       return response()->json([
+         'nextTurn' => $leToca,
+         'customName'=> $customName
+       ]);
   }
-
-  return response()->json([
-    'idsEnJuego' => $leToca
-  ]);
-
  }
 
     public function getTurn(Request $request){
