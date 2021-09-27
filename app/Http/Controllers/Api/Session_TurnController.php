@@ -228,6 +228,7 @@ class Session_TurnController extends Controller
       Session_turn::where('idSessionGame', $request->idSessionGame)
         ->update([
           'turn' => false,
+          'enJuego' => 1
         ]);
         //elejimos un numero de los jugadores para que empiece a jugar
         //luego seguira el numero siguiente en jugar
