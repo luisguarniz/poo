@@ -143,6 +143,7 @@ class Session_TurnController extends Controller
 
   if ($arrayLength == 0) {
 
+    //devuelvo el 0 cuando todos estan eliminados
     return response()->json([
       'nextTurn' => $arrayLength
     ]);
