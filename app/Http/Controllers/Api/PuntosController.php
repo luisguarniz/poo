@@ -120,6 +120,7 @@ class PuntosController extends Controller
         ]);
       }
     }
+    
     //si sale del for quiere decir que ningun participante paso los 39 puntos
     return response()->json([
       'mensaje' => "aun no llegan a mas de 39 puntos, no hay un ganador"
