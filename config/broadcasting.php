@@ -38,17 +38,17 @@ return [
             'options' => [
                 'useTLS' => true,
                 'cluster' => env('PUSHER_APP_CLUSTER'),
-        //        'encrypted'=> true, 
-                'host' => '127.0.0.1',
-        //        'host' => 'www.monkeybootcamp.com',
-           //     'port' => 6003,
-                'port' => 6001,
-                'scheme' => 'http',
-            //    'scheme' => 'https',
-            //          'curl_options' => [
-            //            CURLOPT_SSL_VERIFYHOST => 0,
-            //            CURLOPT_SSL_VERIFYPEER => 0,
-            //        ]
+                'encrypted'=> true, 
+        //        'host' => '127.0.0.1',
+                'host' => 'www.monkeybootcamp.com',
+                'port' => 6003,
+              //  'port' => 6001,
+             //   'scheme' => 'http',
+                'scheme' => 'https',
+                      'curl_options' => [
+                        CURLOPT_SSL_VERIFYHOST => 0,
+                        CURLOPT_SSL_VERIFYPEER => 0,
+                    ]
             ],
         ],
 

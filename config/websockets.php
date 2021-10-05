@@ -8,7 +8,7 @@ return [
      * Set a custom dashboard configuration
      */
     'dashboard' => [
-        'port' => env('LARAVEL_WEBSOCKETS_PORT', 6001),
+        'port' => env('LARAVEL_WEBSOCKETS_PORT', 6003),
     ],
 
     /*
@@ -116,21 +116,21 @@ return [
          * certificate chain of issuers. The private key also may be contained
          * in a separate file specified by local_pk.
          */
-        'local_cert' => env('LARAVEL_WEBSOCKETS_SSL_LOCAL_CERT', null),
-        //'local_cert' => '/etc/letsencrypt/live/monkeybootcamp.com/fullchain.pem',//certificado encontrado
+       // 'local_cert' => env('LARAVEL_WEBSOCKETS_SSL_LOCAL_CERT', null),
+        'local_cert' => '/etc/letsencrypt/live/monkeybootcamp.com/fullchain.pem',//certificado encontrado
         //'local_cert' => '/var/www/nomelacreoback/credenciales/fullchain.pem',
         /*
          * Path to local private key file on filesystem in case of separate files for
          * certificate (local_cert) and private key.
          */
-        'local_pk' => env('LARAVEL_WEBSOCKETS_SSL_LOCAL_PK', null),
-        //'local_pk' => '/etc/letsencrypt/live/monkeybootcamp.com/privkey.pem',//certificado encontrado
+       // 'local_pk' => env('LARAVEL_WEBSOCKETS_SSL_LOCAL_PK', null),
+        'local_pk' => '/etc/letsencrypt/live/monkeybootcamp.com/privkey.pem',//certificado encontrado
         //'local_pk' => '/var/www/nomelacreoback/credenciales/privkey.pem',
         /*
          * Passphrase for your local_cert file.
          */
         'passphrase' => env('LARAVEL_WEBSOCKETS_SSL_PASSPHRASE', null),
-     //   'verify_peer' => false,
+        'verify_peer' => false,
     ],
 
     /*
